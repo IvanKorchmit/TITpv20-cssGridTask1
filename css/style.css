@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-transform: uppercase;  
+}
+
+.container {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 600px 200px 450px;
+    grid-template-areas: 
+    "head head head"
+    "sign sign sign"
+    "f1 f2 f3"
+    "cont cont cont";
+}
+.header {
+    background-color:blue;
+    grid-area: head;
+    color: white;
+
+}
+
+.content {
+    background: black;
+    grid-area: cont;
+    color: white;
+
+}
+
+.sign-up {
+    background-color: white;
+    grid-area: sign;
+
+}
+
+.feature-one {
+    background-color: white;
+    grid-area: f1;
+
+}
+.container > * {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.feature-two {
+    background-color: blue;
+    color: white;
+    grid-area: f2;
+
+}
+
+.feature-three {
+    background-color: red;
+    color: white;
+    grid-area: f3;
+
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 600px 300px 250px 250px;
+        grid-template-areas: 
+        "head head"
+        "cont cont"
+        "sign f1"
+        "f2 f3";
+        
+    }
+}
+@media (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "head"
+        "cont"
+        "sign"
+        "f1"
+        "f2"
+        "f3"
+        ;
+        grid-template-rows: 300px 600px 300px 250px 250px 250px;
+    }
+}
